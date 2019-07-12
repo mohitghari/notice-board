@@ -1,0 +1,60 @@
+<html>
+<body>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+         
+        </head>
+<!--
+<a routerLink="../admin" routerLinkActive="active"style="float:right"><img src="assets/images/user.png"></a>
+-->
+<button (click)="onClick()" style="float:right;margin-top:5px;"><img src="assets/images/user.png"></button>
+<div style="text-align: left" style="border-bottom: 1px solid; padding-bottom: 10px;">
+    <h1>Notice-Board</h1>        
+   <!--     <table style="margin: auto ; text-align: center">
+            <tr>
+                        <th>Title</th>
+                        <th>detail</th>
+                        <th>Date</th>
+            </tr>
+            <tr *ngFor="let notice of notices;let i = index">
+                <td>{{notice.title}}</td>
+                <td>{{notice.detail}}</td>
+                <td>{{notice.date | date: 'yyyy/MM/dd' }}</td>
+                
+            </tr>
+        </table>    -->
+    
+        
+</div>
+<!--
+<div class="container">
+    <div class="display-notice" *ngFor="let notice of notices;let i = index" style="border: 1px solid">
+            <h3 class="title">Title:{{notice.title}}</h3>
+
+            <h5 class="detail" style="margin-top:20px;"><b>Detail:</b>{{notice.detail}}</h5>
+                
+            <p class="date"><b>Date:</b>{{notice.date | date: 'yyyy/MM/dd' }}</p>   
+    </div> 
+    
+    <div class="clear"></div>
+</div>-->
+<br><br><br>
+<div class="container-fluid">
+        <div class="row my-row" >
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12" 
+            *ngFor="let notice of notices;let i = index" style="border: 1px solid lightgray">
+                    <h3 class="title">Title:{{notice.title}}</h3>
+
+                    <h5 class="detail" style="margin-top:20px;"><b>Detail:</b>{{notice.detail}}</h5>
+                        
+                    <p class="date"><b>Date:</b>{{notice.date | date: 'yyyy/MM/dd' }}</p>   
+            </div>           
+        </div>
+</div>
+
+</body>
+</html>

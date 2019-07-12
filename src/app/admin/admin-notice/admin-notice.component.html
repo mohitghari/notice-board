@@ -1,0 +1,31 @@
+<button (click)="logout()" class="btn btn-primary" style="float: right;" >Logout</button>
+<div style="text-align: left" style="border-bottom: 1px solid; padding-bottom: 10px;">
+        <h1>Notice-Board</h1>        
+        
+</div>        
+
+<div style="text-align: center">
+        <h2>Manage Notices</h2>
+        
+    <table style="margin: auto ; text-align: center">
+        <tr>
+                    <th>Sr no.</th>    
+                    <th>Title</th>
+                    <th>detail</th>
+                    <th>Date</th>
+                    <th>Manage Notice</th>
+                    
+        </tr>
+        <tr *ngFor="let notice of notices;let i = index" class="border-tr">
+            <td>{{i + 1 }}</td>
+            <td>{{notice.title}}</td>
+            <td>{{notice.detail}}</td>
+            <td>{{notice.date | date: 'yyyy/MM/dd' }}</td>
+            <td><button (click)="viewNotice(notice)">View</button>
+                <button (click)="deleteNotice(notice,i)" style="margin-left: 8px">X</button></td>
+        </tr>
+    </table>    
+
+    
+</div>
+<button class="addbtn" (click)="addNotice()" style="float:right"><img src="../../../assets/images/Add-icon.png"> </button>

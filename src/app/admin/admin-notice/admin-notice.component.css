@@ -1,0 +1,18 @@
+
+th{
+    text-align: center;
+    font-size: 20px;
+}
+table{
+    width: 50%;
+}
+.border-tr{
+    border: 1px solid;
+}
+
+.addbtn{
+    bottom: 20px;
+       right: 24px;
+       position: fixed;
+       z-index: 3000;
+}

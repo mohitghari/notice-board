@@ -1,0 +1,43 @@
+
+<!--
+<div *ngIf="notice">
+    <tr> 
+        <td>{{notice.title}}</td>
+        <td>{{notice.detail}}</td>
+        <td>{{notice.date | date: 'yyyy/MM/dd' }}</td>
+    </tr>
+</div>-->
+<button (click)="logout()" class="btn btn-primary" style="float: right;" >Logout</button>
+<div style="text-align: left" style="border-bottom: 1px solid; padding-bottom: 10px;">
+        <h1>Notice-Board</h1>        
+        
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" style="text-align: -webkit-center;" >
+        <h2 *ngIf="success">
+            Notice Update SuccessFully..
+        </h2>
+        
+        <div class="form-group">
+                <label>Title</label>
+                <input type="text" formControlName="title" placeholder="title" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+                
+                <div *ngIf="submitted && f.title.invalid" class="invalid-feedback">
+                    <div *ngIf="f.title.errors.required">*Title is required</div>
+                </div>
+        </div>
+        <div class="form-group">
+            <label>Discription</label>
+            <input type="text" formControlName="description" placeholder="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+           
+            <div *ngIf="submitted && f.description.invalid" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">*Desription is required</div>
+            </div>
+        </div>
+      
+        
+        <div class="form-group">
+          <input type="submit" value="Save" class="btn btn-primary">
+        </div>
+
+      </form>

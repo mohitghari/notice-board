@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<div style="text-align:center">
+  <h1>
+    Sign-In!
+  </h1>
+  
+</div>
+       
+        <hr />
+        <form [formGroup]="myForm" (ngSubmit)="formSubmit()" style="    text-align: -webkit-center;">
+          <div class="form-group">
+            <input type="text" formControlName="email" class="form-control" placeholder="Enter username" />
+            <div *ngIf="myForm.controls.email.invalid && submitted" class="text-danger">
+              <small *ngIf="myForm.controls.email.errors.required">Email address is required.</small>
+              <small *ngIf="myForm.controls.email.errors.email">Invalid email</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <input type="password" formControlName="pwd" class="form-control" placeholder="Enter password"/>
+            <div *ngIf="myForm.controls.pwd.invalid && submitted" class="text-danger">
+              <small *ngIf="myForm.controls.pwd.errors.required">Password is required.</small>          
+            </div>
+          </div>
+          
+          <div class="form-group">
+          <div *ngIf="err" class="text-danger">
+              *Wrong username and Password
+          </div>
+          </div>  
+          <div class="form-group">
+            <input type="submit" value="Register"  class="btn btn-primary" />
+          </div>
+</form>
+   
